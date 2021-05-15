@@ -1,0 +1,38 @@
+Question Link:-
+
+https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/permutations-words-1-official/ojquestion
+
+
+Code:-
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void generate(int cs, int ts, map<char,int>&fmap, string asf){
+    if(cs>ts){
+       cout<<asf<<"\n";
+       return;
+    }
+    
+    for(auto itr = fmap.begin(); itr!= fmap.end(); itr++){
+        if(itr->second>0){
+            fmap[itr->first]--;
+            generate(cs+1, ts, fmap, asf+itr->first);
+            fmap[itr->first]++;
+        }
+    }
+}
+
+int main(){
+    string str;
+    cin>>str;
+    
+    map<char,int>fmap;
+    for(char ch : str){
+        fmap[ch]++;
+    }
+    generate(1, str.length(), fmap, "");
+  
+    return 0;
+}

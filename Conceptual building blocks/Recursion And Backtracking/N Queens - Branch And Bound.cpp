@@ -1,9 +1,9 @@
-Question Link :-
+// Question Link :-
 
-https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/nqueens-branch-and-bound-official/ojquestion
+// https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/nqueens-branch-and-bound-official/ojquestion
 
 
-Code:-
+// Code:-
 
 
 

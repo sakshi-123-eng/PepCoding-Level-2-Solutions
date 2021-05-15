@@ -1,8 +1,8 @@
-Question Link:-
+// Question Link:-
 
-https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/max-score-official/ojquestion#!
+// https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/max-score-official/ojquestion#!
 
-Code:-
+// Code:-
 
 
 #include<bits/stdc++.h>

@@ -1,8 +1,8 @@
-Question Link:-
+// Question Link:-
 
-https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/nknights-combinations-2das1d-knight-chooses-official/ojquestion
+// https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/nknights-combinations-2das1d-knight-chooses-official/ojquestion
 
-Code:-
+// Code:-
 
 
 #include<bits/stdc++.h>

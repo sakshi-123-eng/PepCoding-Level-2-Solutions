@@ -1,0 +1,46 @@
+Question Link:-
+
+https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/words-klength-words-2-official/ojquestion
+
+Code:-
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void generateWords(int cs, int ts, string ustr, vector<bool>&used, string asf){
+    if(cs > ts){
+        cout<<asf;
+        cout<<"\n";
+        return;
+    }
+    
+    for(int i=0;i<used.size();i++){
+        // char ch = ustr[i];;
+        if(used[i] == false){
+            used[i]=true;
+            generateWords(cs+1, ts, ustr, used, asf+ustr[i]);
+            used[i]=false;
+        }
+    }
+    
+}
+
+int main(){
+    string str;
+    cin>>str;
+    int k;
+    cin>>k;
+    
+    unordered_set<char>unique;
+    string ustr = "";
+    for(char ch : str){
+        if(unique.find(ch) == unique.end()){
+            unique.insert(ch);
+            ustr += ch;
+        }
+    }
+    
+    vector<bool>used(ustr.length(),false);
+    generateWords(1, k, ustr, used, "");
+
+}

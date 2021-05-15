@@ -1,9 +1,9 @@
-Question Link:-
+// Question Link:-
 
-https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/nqueens-permutations-2das1d-official-queen-chooses/ojquestion
+// https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/nqueens-permutations-2das1d-official-queen-chooses/ojquestion
 
 
-Code:-
+// Code:-
 
 
 #include<bits/stdc++.h>

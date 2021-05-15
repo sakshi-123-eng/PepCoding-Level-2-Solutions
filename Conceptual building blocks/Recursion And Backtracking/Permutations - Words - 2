@@ -1,0 +1,46 @@
+Question Link:-
+
+https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/permutations-words-2-official/ojquestion
+
+Code:-
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void generateEWords(int cc, string str, vector<char>&spots, map<char,int>&lastOccurance){
+    if(cc==str.length()){
+       for(int i=0;i<spots.size();i++){
+           cout<<spots[i];
+       }
+       cout<<"\n";
+       return;
+    }
+    
+    
+    char ch = str[cc];
+    int lo = lastOccurance[ch];
+    
+    for(int i= lo + 1; i<spots.size(); i++){
+        if(spots[i]=='0'){
+            spots[i]=ch;
+            lastOccurance[ch]=i;
+            generateEWords(cc + 1, str, spots, lastOccurance);
+            lastOccurance[ch]=lo;
+            spots[i]='0';
+        }
+    }
+}
+
+int main(){
+    string str;
+    cin>>str;
+    
+    vector<char>spots(str.length(),'0');
+    map<char,int>lastOccurance;
+    for(char ch : str){
+        lastOccurance.insert({ch, -1});
+    }
+    generateEWords(0, str, spots, lastOccurance);
+  
+    return 0;
+}

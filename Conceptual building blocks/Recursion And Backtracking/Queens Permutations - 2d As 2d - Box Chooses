@@ -1,0 +1,55 @@
+Question Link:-
+
+https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/queens-permutations-2das2d-box-chooses-official/ojquestion
+
+
+Code:-
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void queensPermutations(int queen_placed_so_far, int total_queen,int row, int col, string answer_so_far, vector<bool>&queens){
+    if(row == total_queen){
+        if(queen_placed_so_far == total_queen){
+            cout<<answer_so_far<<"\n";
+            cout<<"\n";
+        }
+        return;
+    }
+    
+    
+    int new_row = 0;
+    int new_column = 0;
+    string sep = "";
+    
+    if(col == (total_queen - 1)){
+        new_row = row + 1;
+        new_column = 0;
+        sep = "\n";
+    }else{
+        new_row = row;
+        new_column = col + 1;
+        sep = "	";
+    }
+    
+    for(int i=0;i<queens.size();i++){
+        if(queens[i] == false){
+            queens[i] = true;
+            queensPermutations(queen_placed_so_far + 1, total_queen, new_row, new_column, answer_so_far + "q" + to_string(i+1) + sep, queens);
+            queens[i] = false;
+        }
+    }
+    queensPermutations(queen_placed_so_far + 0, total_queen, new_row, new_column, answer_so_far + "-" + sep, queens);
+}
+
+int main(){
+    int n;
+    cin>>n;
+    
+    vector<bool>queens(n, false);
+    queensPermutations(0, n, 0, 0, "", queens);
+    
+    
+    return 0;
+}

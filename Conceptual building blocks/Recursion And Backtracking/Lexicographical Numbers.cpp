@@ -1,8 +1,8 @@
-Question Link:-
+// Question Link:-
 
-https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/lexicographical-numbers-official/ojquestion
+// https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/lexicographical-numbers-official/ojquestion
 
-Code:-
+// Code:-
 
 #include<bits/stdc++.h>
 using namespace std;

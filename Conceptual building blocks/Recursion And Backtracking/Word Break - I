@@ -1,0 +1,45 @@
+Question Link:-
+
+https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/wordbreak1official/ojquestion
+
+
+Code:-
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void wordBreak(string str, string ans, vector<string> dict){
+    if(str.length() == 0){
+        cout<<ans<<endl;
+        return;
+    }
+    
+    for(int i=0;i<str.length();i++){
+        string left = str.substr(0,i+1);
+        string right = str.substr(i+1);
+        
+        for(int j=0 ;j<dict.size(); j++){
+            if(dict[j].compare(left)==0){
+                wordBreak(right, ans+left+" ", dict);
+            }
+        }
+        
+    }
+}
+
+int main(){
+    int n;
+    cin>>n;
+    vector<string>dict(n);
+    for(int i=0;i<n;i++){
+        cin>>dict[i];
+    }
+    string sentence;
+    cin>>sentence;
+    
+    wordBreak(sentence,"", dict);
+    
+    
+    return 0;
+}

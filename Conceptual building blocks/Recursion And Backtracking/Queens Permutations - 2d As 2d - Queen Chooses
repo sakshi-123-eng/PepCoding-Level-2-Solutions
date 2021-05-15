@@ -1,0 +1,48 @@
+Question Link:-
+
+https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/queens-permutations-2das2d-queen-chooses-official/ojquestion
+
+Code:-
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void queenPermutationsQueenChooses(int queen_placed_so_far, int total_queen, vector<vector<int>>&chess){
+    if(queen_placed_so_far == total_queen){
+        
+        for(int i=0;i<chess.size();i++){
+            for(int j=0;j<chess.size();j++){
+                if(chess[i][j] == 0){
+                    cout<<"-	";
+                }else{
+                    cout<<"q"<<chess[i][j]<<"	";
+                }
+            }
+            cout<<"\n";
+        }
+        cout<<"\n";
+        return;
+    }
+    
+    for(int i=0;i<chess.size();i++){
+        for(int j=0;j<chess.size();j++){
+            if(chess[i][j] == 0){
+                chess[i][j] = (queen_placed_so_far + 1);
+                queenPermutationsQueenChooses(queen_placed_so_far + 1, total_queen, chess);
+                chess[i][j] = 0;
+            }    
+        }
+        
+    }
+    
+}
+
+int main(){
+    int n;
+    cin>>n;
+    
+    vector<vector<int>>chess(n,vector<int>(n,0));
+    queenPermutationsQueenChooses(0, n, chess);
+    return 0;
+}

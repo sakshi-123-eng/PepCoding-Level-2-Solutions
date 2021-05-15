@@ -1,0 +1,48 @@
+Question Link:-
+
+https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/queens-combinations-2das2d-box-chooses-official/ojquestion
+
+
+Code:-
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void queenCombinationsBoxChoose(int queen_placed_so_far, int total_queen, int row, int col, string answer_so_far){
+    if(row == total_queen){
+        if(queen_placed_so_far == total_queen){
+            cout<<answer_so_far<<endl;
+        }
+        return;
+    }
+    
+    int new_row = 0;
+    int new_col = 0;
+    string yes_answer_so_far = "";
+    string no_answer_so_far = "";
+    
+    if(col == total_queen - 1){
+        new_row = row + 1;
+        new_col = 0;
+        yes_answer_so_far = answer_so_far + "q\n";
+        no_answer_so_far = answer_so_far + "-\n";
+    }else{
+        new_row = row;
+        new_col = col + 1;
+        yes_answer_so_far = answer_so_far + "q";
+        no_answer_so_far = answer_so_far + "-";
+    }
+    
+queenCombinationsBoxChoose(queen_placed_so_far + 1, total_queen, new_row, new_col, yes_answer_so_far);
+queenCombinationsBoxChoose(queen_placed_so_far + 0, total_queen, new_row, new_col, no_answer_so_far); 
+}
+
+int main(){
+    int n;
+    cin>>n;
+    
+    queenCombinationsBoxChoose(0, n, 0, 0, "");
+   
+    return 0;
+}
